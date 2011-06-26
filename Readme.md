@@ -3,22 +3,19 @@
 <img src="http://i.imgur.com/occaQ.png" alt="nyancat.js screenshot" />
 
 <h2>first and most importantly, click play on the video below</h2>
-<object width="425" height="349"><param name="movie" value="http://www.youtube.com/v/QH2-TGUlwu4?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/QH2-TGUlwu4?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="425" height="349" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+
+<iframe width="425" height="349" src="http://www.youtube.com/embed/QH2-TGUlwu4" frameborder="0" allowfullscreen></iframe>
 
 <h2>ensure you have the latest version of <a href="http://nodejs.org" target="_blank">node.js</a> and <a href="http://npmjs.org/" target="_blank">npm</a> installed</h2>
 
-<h2>then simply run the following commands from terminal to get started!</h2>
+<h2>then run the following commands from terminal to get started!</h2>
 
-      npm install colors
-      node nyancat.js
+    npm install colors
+    node nyancat.js
 
-<h3><span style="background-color: yellow">hint:</span> resize your terminal window and run `node nyancat.js` again ;)</h3>
+<h3>hint: resize your terminal window then run nyancat.js again... and magic!</h3>
 
 <h4>join #node.js today on irc.freenode.net!</h4>
-
-
-
-
 
 Copyright (c) 2011 Nick Baugh (niftylettuce)
 
