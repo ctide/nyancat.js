@@ -106,6 +106,16 @@ for(i=0;i<100;i++) { // temporary for loop
 //nyancat();
 
 var niftylettuce = "by niftylettuce | github.com/niftylettuce/nyancat.js | @niftylettuce";
-    stagasSpaces = new Array(Math.floor((width - niftylettuce.length)/ 2)).join(" ");
-sys.puts("\n\n"+ stagasSpaces + niftylettuce.magenta+"\n\n");
+    stagasSpaces = new Array(Math.floor((width - niftylettuce.length)/ 2)).join(" "),
+    nyancatAsciiLength = "                                   _      _   ",
+    nyancatAsciiSpaces = new Array(Math.floor((width - nyancatAsciiLength.length)/ 2)).join(" "),
+    nyancatAscii = nyancatAsciiSpaces + "                                   _      _   \n\
+"+nyancatAsciiSpaces+" _ __  _   _  __ _ _ __   ___ __ _| |_   (_)___\n\
+"+nyancatAsciiSpaces+"| '_ \\| | | |/ _` | '_ \\ / __/ _` | __|  | / __|\n\
+"+nyancatAsciiSpaces+"| | | | |_| | (_| | | | | (_| (_| | |_ _ | \\__ \\\n\
+"+nyancatAsciiSpaces+"|_| |_|\\__, |\\__,_|_| |_|\\___\\__,_|\\__(_)/ |___/\n\
+"+nyancatAsciiSpaces+"       |___/                           |__/   ";
+
+sys.puts("\n\n" + nyancatAscii.rainbow);
+sys.puts("\n\n"+ stagasSpaces + niftylettuce+"\n\n");
 
