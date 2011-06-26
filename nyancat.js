@@ -30,7 +30,8 @@ var width = tty.getWindowSize(1)[1];
 var height = tty.getWindowSize(1)[0];
 
 var colors = require('colors'),
-    flag = ".:*~*:._",
+    //flag = ".:*~*:._",
+    flag = "`·.,¸,.·*¯",
     flagLength = flag.length,
     numFlags = Math.floor(width / flagLength),
     position = 1,
