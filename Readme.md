@@ -2,9 +2,7 @@
 
 <img src="http://i.imgur.com/occaQ.png" alt="nyancat.js screenshot" />
 
-<h2>first and most importantly, click play on the video below</h2>
-
-<iframe width="425" height="349" src="http://www.youtube.com/embed/QH2-TGUlwu4" frameborder="0" allowfullscreen></iframe>
+<h2>first and most importantly start listening to <a href="http://www.youtube.com/watch?v=QH2-TGUlwu4" target="_blank">nyancat</a></h2>
 
 <h2>ensure you have the latest version of <a href="http://nodejs.org" target="_blank">node.js</a> and <a href="http://npmjs.org/" target="_blank">npm</a> installed</h2>
 
