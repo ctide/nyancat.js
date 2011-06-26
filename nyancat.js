@@ -105,7 +105,7 @@ for(i=0;i<100;i++) { // temporary for loop
 //}
 //nyancat();
 
-var niftylettuce = "by niftylettuce | github.com/niftylettuce | @niftylettuce";
+var niftylettuce = "by niftylettuce | github.com/niftylettuce/nyancat.js | @niftylettuce";
     stagasSpaces = new Array(Math.floor((width - niftylettuce.length)/ 2)).join(" ");
 sys.puts("\n\n"+ stagasSpaces + niftylettuce.magenta+"\n\n");
 
