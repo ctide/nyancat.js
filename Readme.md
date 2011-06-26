@@ -1,6 +1,6 @@
 <h1>nyancat.js - terminal/console animation of nyancat's rainbow using colors.js</h1>
 
-<img src="http://i.imgur.com/occaQ.png" alt="nyancat.js screenshot" />
+<img src="http://i.imgur.com/m0bWC.png" alt="nyancat.js screenshot" />
 
 <h2>first and most importantly start listening to <a href="http://www.youtube.com/watch?v=QH2-TGUlwu4" target="_blank">nyancat</a></h2>
 
