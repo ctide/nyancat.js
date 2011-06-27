@@ -24,8 +24,7 @@ THE SOFTWARE.
 
 */
 
-var sys = require('sys'),
-    tty = require('tty');
+var tty = require('tty');
 
 var width = tty.getWindowSize(1)[1];
 var height = tty.getWindowSize(1)[0];
@@ -45,30 +44,45 @@ var colors = require('colors'),
 function tastetherainbow(color, nyancat) {
   switch(color) {
     case 0:
-      sys.puts(nyancat.red);
+      console.error(nyancat.red);
       break;
     case 1:
-      sys.puts(nyancat.yellow);
+      console.error(nyancat.yellow);
       break;
     case 2:
-      sys.puts(nyancat.green);
+      console.error(nyancat.green);
       break;
     case 3:
-      sys.puts(nyancat.cyan);
+      console.error(nyancat.cyan);
       break;
     case 4:
-      sys.puts(nyancat.blue);
+      console.error(nyancat.blue);
       break;
     case 5:
-      sys.puts(nyancat.magenta);
+      console.error(nyancat.magenta);
       break;
     default:
-      sys.puts(nyancat.rainbow);
+      console.error(nyancat.rainbow);
       break;
   }
 }
 
-process.on('SIGINT', process.exit);
+process.on('SIGINT', function() {
+    var niftylettuce = "by niftylettuce | github.com/niftylettuce/nyancat.js | @niftylettuce";
+        stagasSpaces = new Array(Math.floor((width - niftylettuce.length)/ 2)).join(" "),
+        nyancatAsciiLength = "                                   _      _   ",
+        nyancatAsciiSpaces = new Array(Math.floor((width - nyancatAsciiLength.length)/ 2)).join(" "),
+        nyancatAscii = nyancatAsciiSpaces + "                                   _      _   \n\
+    "+nyancatAsciiSpaces+" _ __  _   _  __ _ _ __   ___ __ _| |_   (_)___\n\
+    "+nyancatAsciiSpaces+"| '_ \\| | | |/ _` | '_ \\ / __/ _` | __|  | / __|\n\
+    "+nyancatAsciiSpaces+"| | | | |_| | (_| | | | | (_| (_| | |_ _ | \\__ \\\n\
+    "+nyancatAsciiSpaces+"|_| |_|\\__, |\\__,_|_| |_|\\___\\__,_|\\__(_)/ |___/\n\
+    "+nyancatAsciiSpaces+"       |___/                           |__/   ";
+
+    console.error("\n\n" + nyancatAscii.rainbow);
+    console.error("\n\n"+ stagasSpaces + niftylettuce+"\n\n");
+    process.exit();
+});
 
 // figure out probability of a unicorn KO'ing a narwhal while wrestling a nyancat
 
@@ -76,48 +90,30 @@ process.on('SIGINT', process.exit);
 // TODO: figure out why I can't call this function properly so it loops consistently
 // function nyancat() {
 
-for(i=0;i<100;i++) { // temporary for loop
-  for(f=1;f<numFlags + 1;f++) {
-    for(h=0;h<height-1;h++) {
-      var nyancat = "";
-      for(w=0;w<numFlags;w++) {
-        if(w === 0) {
-          nyancat += flag.substring(position, flagLength);
-        } else if (w === numFlags - 1) {
-          nyancat += (flag + flag.substring(0, position));
-        } else {
-          nyancat += flag;
+(function magic() {
+    for(f=1;f<numFlags + 1;f++) {
+      for(h=0;h<height-1;h++) {
+        var nyancat = "";
+        for(w=0;w<numFlags;w++) {
+          if(w === 0) {
+            nyancat += flag.substring(position, flagLength);
+          } else if (w === numFlags - 1) {
+            nyancat += (flag + flag.substring(0, position));
+          } else {
+            nyancat += flag;
+          }
         }
+        if(color === 5)
+          color = 0;
+        else
+          color++;
+        tastetherainbow(color, nyancat);
       }
-      if(color === 5)
-        color = 0;
-      else
-        color++;
-      tastetherainbow(color, nyancat);
+      if(position === flagLength) {
+        position = 1;
+      } else {
+        position++;
+      }
     }
-    if(position === flagLength) {
-      position = 1;
-    } else {
-      position++;
-    }
-  }
-}
-
-  //nyancat();
-//}
-//nyancat();
-
-var niftylettuce = "by niftylettuce | github.com/niftylettuce/nyancat.js | @niftylettuce";
-    stagasSpaces = new Array(Math.floor((width - niftylettuce.length)/ 2)).join(" "),
-    nyancatAsciiLength = "                                   _      _   ",
-    nyancatAsciiSpaces = new Array(Math.floor((width - nyancatAsciiLength.length)/ 2)).join(" "),
-    nyancatAscii = nyancatAsciiSpaces + "                                   _      _   \n\
-"+nyancatAsciiSpaces+" _ __  _   _  __ _ _ __   ___ __ _| |_   (_)___\n\
-"+nyancatAsciiSpaces+"| '_ \\| | | |/ _` | '_ \\ / __/ _` | __|  | / __|\n\
-"+nyancatAsciiSpaces+"| | | | |_| | (_| | | | | (_| (_| | |_ _ | \\__ \\\n\
-"+nyancatAsciiSpaces+"|_| |_|\\__, |\\__,_|_| |_|\\___\\__,_|\\__(_)/ |___/\n\
-"+nyancatAsciiSpaces+"       |___/                           |__/   ";
-
-sys.puts("\n\n" + nyancatAscii.rainbow);
-sys.puts("\n\n"+ stagasSpaces + niftylettuce+"\n\n");
-
+    process.nextTick(magic);
+})();
