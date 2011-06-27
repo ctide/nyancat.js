@@ -11,6 +11,11 @@
     npm install colors
     node nyancat.js
 
+<h2>installing directly from npm</h2>
+
+    npm install -g nyancat
+    nyancat
+
 <h3>hint: resize your terminal window then run nyancat.js again... and magic!</h3>
 
 <h4>join #node.js today on irc.freenode.net!</h4>
